@@ -92,3 +92,69 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this at the end of the file to override any button styles */
+.no-outline-button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-width: 0 !important;
+}
+
+/* Fix for all buttons in the top menu */
+.top-menu-button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-width: 0 !important;
+}
+
+/* Override all button styles to remove outlines */
+button,
+.button,
+[type="button"],
+[role="button"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-width: 0 !important;
+}
+
+/* Fix for dropdown buttons */
+[data-radix-popper-content-wrapper] button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix for all buttons in the app */
+.no-outline-button,
+.top-menu-button,
+[class*="button"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; transform: translateY(-100px); }
+  100% { opacity: 0; transform: translateY(-120px); }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-floatUp {
+  animation: floatUp 2s ease-out forwards;
+}
